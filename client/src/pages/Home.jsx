@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full min-h-screen flex justify-center items-start bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(100,151,130,1)_19%,_rgba(75,101,101,1)_81%)] relative overflow-x-hidden">
       {/* 1440px fixed-width container */}
@@ -58,7 +60,10 @@ const Home = () => {
             </h1>
             {/* Dashed Rectangle with button */}
             <div className="border-2 border-dashed border-[#9747ff] rounded-[20px] w-[542px] h-[97px] flex items-center px-8 mb-8 bg-transparent">
-              <button className="bg-white text-black font-semibold text-[22px] px-8 py-2 rounded-full shadow hover:scale-105 transition flex items-center">
+              <button
+                className="bg-white text-black font-semibold text-[22px] px-8 py-2 rounded-full shadow hover:scale-105 transition flex items-center"
+                onClick={() => navigate("/services")}
+              >
                 Get Started As <span className="ml-2 text-green-600 text-xl">●</span>
               </button>
             </div>
